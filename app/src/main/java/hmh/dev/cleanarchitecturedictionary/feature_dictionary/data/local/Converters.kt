@@ -1,4 +1,4 @@
-package hmh.dev.cleanarchitecturedictionary.feature_dictionary.data.local.entry
+package hmh.dev.cleanarchitecturedictionary.feature_dictionary.data.local
 
 import androidx.room.ProvidedTypeConverter
 import androidx.room.TypeConverter
@@ -13,16 +13,16 @@ class Converters(
     @TypeConverter
     fun fromMeaningsJson(json: String): List<Meaning> {
         return jsonParser.fromJson<ArrayList<Meaning>>(
-            json = json,
-            type = object : TypeToken<ArrayList<Meaning>>() {}.type
+            json,
+            object : TypeToken<ArrayList<Meaning>>(){}.type
         ) ?: emptyList()
     }
 
     @TypeConverter
-    fun toMeaningJson(meanings: List<Meaning>): String {
+    fun toMeaningsJson(meanings: List<Meaning>): String {
         return jsonParser.toJson(
-            obj = meanings,
-            type = object : TypeToken<ArrayList<Meaning>>() {}.type
+            meanings,
+            object : TypeToken<ArrayList<Meaning>>(){}.type
         ) ?: "[]"
     }
 }

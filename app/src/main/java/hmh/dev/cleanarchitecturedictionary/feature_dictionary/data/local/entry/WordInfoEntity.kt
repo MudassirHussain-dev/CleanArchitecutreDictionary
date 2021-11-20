@@ -7,18 +7,18 @@ import hmh.dev.cleanarchitecturedictionary.feature_dictionary.domain.model.WordI
 
 @Entity
 data class WordInfoEntity(
+    val word: String,
+    val phonetic: String,
+    val origin: String,
     val meanings: List<Meaning>,
-    val origin: String?,
-    val phonetic: String?,
-    val word: String?,
     @PrimaryKey val id: Int? = null
 ) {
     fun toWordInfo(): WordInfo {
         return WordInfo(
             meanings = meanings,
+            word = word,
             origin = origin,
-            phonetic = phonetic,
-            word = word
+            phonetic = phonetic
         )
     }
 }

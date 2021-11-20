@@ -5,7 +5,7 @@ import hmh.dev.cleanarchitecturedictionary.feature_dictionary.domain.model.Defin
 data class DefinitionDto(
     val antonyms: List<String>,
     val definition: String,
-    val example: String,
+    val example: String?,
     val synonyms: List<String>
 ) {
     fun toDefinition(): Definition {

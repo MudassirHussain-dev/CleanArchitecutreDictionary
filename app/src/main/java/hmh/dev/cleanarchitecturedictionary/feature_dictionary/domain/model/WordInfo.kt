@@ -5,7 +5,7 @@ import hmh.dev.cleanarchitecturedictionary.feature_dictionary.data.remote.dto.Ph
 
 data class WordInfo(
     val meanings: List<Meaning>,
-    val origin: String?,
-    val phonetic: String?,
-    val word: String?
+    val origin: String,
+    val phonetic: String,
+    val word: String
 )
